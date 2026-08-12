@@ -39,12 +39,19 @@ assignments = float(input("Ente Assignments: "))
 
 # make prediction
 
-prediction = model.predict([[
+new_student = pd.DataFrame([[
     study_hours,
     attendance,
     previous_marks,
     assignments
-]])
+]], columns=[
+    "Study_Hours",
+    "Attendance",
+    "Previous_Marks",
+    "Assignments"
+])
+
+prediction = model.predict(new_student)
 
 # Display the Result
 
